@@ -1,0 +1,37 @@
+## Descrição dos serviços AWS
+
+ # Amazon EC2 (Elastic Compute Cloud)
+ Serviço de computação que permite criar e executar máquinas virtuais na nuvem. É usado para
+ hospedar aplicações, servidores web, bancos de dados, entre outros.
+
+ # Amazon EBS (Elastic Block Store)
+ Serviço de armazenamento em blocos persistente, utilizado junto ao EC2. Ele funciona como um
+ “HD externo” que pode ser anexado a uma instância, garantindo que os dados permaneçam mesmo
+ após desligar ou reiniciar a instância.
+
+ # AWS Lambda
+ Serviço de computação serverless, que executa código sob demanda, em resposta a eventos. Não
+ requer provisionamento ou gerenciamento de servidores. Muito usado para automações,
+ processamento de dados e integrações.
+
+ # Amazon S3 (Simple Storage Service)
+ Serviço de armazenamento de objetos altamente escalável, usado para guardar arquivos,
+ backups, imagens, logs ou qualquer tipo de dado. Oferece versionamento, criptografia e integração
+ com diversos serviços da AWS.
+
+ # Amazon AMI (Amazon Machine Image)
+ Uma AMI é uma imagem pré-configurada usada para criar instâncias EC2. Ela contém:
+ 1. Sistema Operacional (Linux, Windows, etc.)
+ 2. Aplicações ou softwares adicionais (ex: servidor web, banco de dados, ferramentas de
+ segurança).
+ 3. Configurações de inicialização que permitem replicar rapidamente a mesma configuração em
+ múltiplas instâncias.
+
+# Descrição do diagrama de arquitetura
+1. O usuário acessa uma aplicação web e essa aplicação é a interface para enviar arquivos e interagir com os serviços hospedados na AWS. 
+2. O API Gateway atua como ponto de entrada das requisições, encaminhando-as para os serviços apropriados.
+3. O Lambda processa a requisição sem necessidade de servidor (serverless).
+4. Arquivos e dados processados são armazenados no Amazon S3, que oferece armazenamento escalável e durável.
+5. A instância EC2 é o servidor principal da arquitetura. Ela está conectada a dois volumes de armazenamento EBS (A-EBS e B-EBS) que funcionam como discos virtuais persistentes.
+6. O Amazon EBS Snapshot permite criar backups dos volumes EBS, ajudando na recuperação de dados em caso de falha ou migração da infraestrutura.
+7. A instância EC2 se comunica com o DynamoDB, que é um banco de dados NoSQL totalmente gerenciado pela AWS. Ele armazena metadados ou dados estruturados que precisam ser acessados com baixa latência.
