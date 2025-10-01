@@ -9,7 +9,7 @@ Este desafio tem como objetivo avaliar a capacidade de projetar, configurar e do
 2. Documentar insights e anotações obtidos durante a prática. 
 
 ## Entregáveis
-1. Imagem do desenho de arquitetura salva em `/images/`.
+1. Imagem do desenho de arquitetura salva em `/images`.
 2. Um breve relatório descrevendo a função de cada serviço na arquitetura e como os componentes interagem.
 
 ## Licença
